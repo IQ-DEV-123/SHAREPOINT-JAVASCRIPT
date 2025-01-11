@@ -100,6 +100,40 @@ let z5=46;
 let z6=!(z4>200 || z5>400 || z4>30);
 document.write(`<h2>${z5} not equal ${z4} = ${z6}</h2>`)
 
+// ternary operator.
+document.write(`<h1>5.Ternary Operator</h1> <hr>`)
+let marks=55;
+let result= (marks>45) ? 'Pass':'Fail';
+document.write(`<h1>Result :${result}</h1>`)
+
+// unary operator.
+document.write(`<h1 style="color:red">6.Unary Operator</h1> <hr>`)
+let v=55;
+let t=-v
+document.write(`<h1>Result :${t}</h1>`)
+
+
+let r=34
+let s='34'
+let r1=r==s
+document.write(`<h1>Result :${r1}</h1>`)
+
+// Assignment Operator.
+document.write(`<h1 style="color:red">7.Assignment Operator</h1> <hr>`)
+let j=90;
+j=j+10 // standard method 
+j=j+20
+j+=23 // shorthand method
+j*=2
+j/=3
+document.write(`<h1>Result : ${j}</h1>`)
+
+
+
+
+
+
+
 
 
 
