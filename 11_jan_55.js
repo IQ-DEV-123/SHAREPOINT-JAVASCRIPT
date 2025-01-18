@@ -27,10 +27,10 @@
 
 // --------------------------------------- Return keyword
 
-function add(total_cash,used_cash){
-    return total_cash-used_cash
-}
-let total_cash=100
-let used_cash=50
-let res=add(total_cash,used_cash)
-console.log(res)
+// function add(total_cash,used_cash){
+//     return total_cash-used_cash
+// }
+// let total_cash=100
+// let used_cash=50
+// let res=add(total_cash,used_cash)
+// console.log(res)
