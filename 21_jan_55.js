@@ -166,12 +166,110 @@
 // my_data.splice(3,2,"rohan","ajay","seema","a","b")
 // console.log(my_data)
 
-// foreach()
-// filter()
-// map()
-// callback
+// forEach() array loop.
+
 // let my_data=[1,2,3,4,5,6,7,8,9]
-// let res=my_data.forEach()
+
+// function callback(ele,index,ar){
+//     console.log(`ele:${ele} ind:${index} ar:${ar}`)
+// }
+
+// my_data.forEach(function(ele,index,ar){
+//      console.log(`ele:${ele} ind:${index} ar:${ar}`)
+// })
+
+// my_data.forEach((ele,index)=>console.log(ele,index))
+
+
+// flat()
+// let my_data=[1,2,3,['a',['dev','aman'],'b','c'],['h','i','j'],4,5,6]
+// console.log(my_data.flat(Infinity))
+
+// filter(callback) :Higher order function (HOF) create new array with element thas pass the condition
+// let marks=[45,56,55,89,90,45,50]
+
+// function check_pass(ele){
+//     return ele > 50
+// }
+
+// let res=marks.filter(check_pass)
+// console.log(res)
+
+// let res=marks.filter(function(ele){
+//     return ele > 50
+// })
+// console.log(res)
+
+// let res=marks.filter((ele)=>ele>50)
+// console.log(res)
+
+// map(callback)
+// let marks=[45,56,55,89,90,45,50]
+// let res=marks.map((ele)=>ele*10)
+// console.log(res)
+
+// find() :finds the first element that pass the condition
+
+// let marks=[45,56,55,89,90,45,50]
+// let res=marks.find((ele)=>ele>55 )
+// console.log(res)
+
+// findindex() :finds the index of first element that pass the condition
+
+// let marks=[23,40,2,55,89,44,90,45,50]
+// let res=marks.findIndex((ele)=>ele>=45 )
+// console.log(res)
+
+// some() : Checks if at least one element pass the condition.
+// let marks=["dev","abhisek","rohan"]
+// let res=marks.some((ele)=>ele=="abhisek" )
+// console.log(res)
+
+// sort()
+// let marks=[23,40,2,55,89,44,90,45,50]
+// console.log(marks.sort()) // ascending
+// console.log(marks.sort((a,b)=>b-a)) // descending
+
+// join() : Joins array with specific symbol return string.
+// let marks=[1,2,3]
+// let res=marks.join("-")
+// console.log(res)
+
+// toString()
+// let marks=[1,2,3,8,0]
+// console.log(typeof(marks))
+// let res=marks.toString()
+// console.log(typeof(res))
+// console.log(res)
+
+// Array.from()
+// let arr='123455'
+// let res=Array.from(arr)
+// console.log(res)
+
+// How to empty an array
+let arr=[5,66,89,90,34]
+arr.length=0
+console.log(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // -------------------- Array-Destructuring.
 // 1.Basic structuring.
