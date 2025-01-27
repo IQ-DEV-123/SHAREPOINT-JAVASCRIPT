@@ -248,31 +248,20 @@
 // console.log(res)
 
 // How to empty an array
-let arr=[5,66,89,90,34]
-arr.length=0
-console.log(arr)
+// let arr=[5,66,89,90,34]
+// arr.length=0
+// console.log(arr)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// copywithin(target,start,end-1)
+// let arr=[9,34,89,90,20,30]
+// arr.copyWithin(1,3,5)
+// console.log(arr)
 
 
 
 
 // -------------------- Array-Destructuring.
-// 1.Basic structuring.
+// 1.Basic destructuring.
 // let my_data=[1,2,3,4,5,6,7,8,9]
 // let [e1,e2,e3]=my_data
 // console.log(e1)
@@ -293,3 +282,51 @@ console.log(arr)
 // console.log(e4)
 
 // -------------------- Array-structuring.
+// 1.Basic structuring.
+// let [a,b,c,d,e,f="how"]=[1,"aman",3,4,5]
+// console.log(a)
+// console.log(b)
+// console.log(f)
+
+// 2.Swapping 
+// let a="IQ" ,b="INDIA";
+// [a,b]=[b,a]
+// console.log(a,b)
+
+// 3.spread operator.
+// let a=[20,30,50,78]
+// let b=['a','b','c','d']
+// let c=[...a,...b]
+// console.log(c)
+
+
+// break and continue
+// let a=[20,30,50,78,9,3,90,40]
+// for (let i=0 ; i<a.length ; i++){
+//     if(a[i]==78){
+//         console.log("Data Founded..",a[i])
+//         break;
+       
+//     }
+//     else{
+//         console.log("Data not Founded..",a[i])
+//     }
+// }
+
+
+
+
+// let a=[20,30,50,78,9,3,90,40]
+// for (let i=0 ; i<a.length ; i++){
+//     if(a[i]==78){
+//         continue;
+//     }
+//     else{
+//         console.log("Data not Founded..",a[i])
+//     }
+// }
+
+// Array completed.
+
+
+
