@@ -96,12 +96,43 @@
 // console.log(reg.test('tooooo'))
 
 // 15 (\) : Escape special character.
-let reg=/\@/
-console.log(reg.test('a@b'))
-console.log(reg.test('abc'))
+// let reg=/\@/
+// console.log(reg.test('a@b'))
+// console.log(reg.test('abc'))
 
 
 // 2. Brackets
+// 1. Match any charecter inside bracket
+// let reg=/[aeiou]/
+// console.log(reg.test('this is kite bad'))
+// console.log('aman,abhay,rohan,ankit'.match(reg))
+
+// 2. Match any from a-z.
+// let reg=/[A-Z]/ig
+// console.log(reg.test('this is kite bad'))
+// console.log('aman,abhay,rohan,ankit'.match(reg))
+
+// 3. Match any from 0-9.
+// let reg=/[A-Za-z0-9]/g
+// console.log(reg.test('this is kite bad'))
+// console.log('aman,abhay,rohan,ankit 236 @ #'.match(reg))
+
+// 4. Match not any char.
+// let reg=/[,]/g
+// console.log(reg.test('this is kite bad'))
+// console.log('aman,abhay,rohan,ankit 236 @ #'.match(reg))
+
+// 5. Match 1 time at ends.
+// let reg=/hey$/g
+// console.log(reg.test('aman hey good hey'))
+
+// 6. Match n times.
+// let reg=/he/
+// console.log(reg.test('heyyy hey aman'))
+
+
+
+
 
 
 
