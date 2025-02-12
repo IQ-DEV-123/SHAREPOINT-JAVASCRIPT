@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(55deg,blue,orange);
+            padding: 20px;
+            color: white;
+            
+        }
+
+        nav .menu ul li {
+            list-style: none;
+            float: left;
+            margin-left: 60px;
+            font-size: 1.3em;
+        }
+    </style>
+   
+
+    <script>
+        // Create Element using js.
+        // creating nav
+        let nav=document.createElement('nav')
+        document.body.append(nav)
+        console.log(nav)
+
+        // creat first div
+        let first_div=document.createElement('div')
+        first_div.className="logo"
+        nav.append(first_div)
+
+        let h1=document.createElement('h1')
+        h1.innerHTML="Success<span>24</span> "
+        first_div.append(h1)
+
+        // creat second div
+        let second_div=document.createElement('div')
+        second_div.className="menu"
+        nav.append(second_div)
+
+        let ul=document.createElement('ul')
+        let li_1=document.createElement('li')
+        let li_2=document.createElement('li')
+        let li_3=document.createElement('li')
+        let li_4=document.createElement('li')
+        li_1.innerHTML=`<a>Home</a>` 
+        li_2.innerHTML=`<a>about</a>` 
+        li_3.innerHTML=`<a>Contact</a>` 
+        li_4.innerHTML=`<a>Courses</a>` 
+        
+        ul.append(li_1,li_2,li_3,li_4)
+        second_div.append(ul)
+        
+
+        // let res=[]
+        // for (let i=0 ; i<5 ; i++){
+        //     let h2=document.createElement('li')
+        //     res.push(h2)
+        // }
+
+        let ar=['aman','abahy','shivam']
+        for(let i of ar){
+            document.write(i)
+        }
+        
+    
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.bg{
+    background-color: rgb(0, 208, 255);
+    color: white;
+    text-shadow: 2px 3px red;
+}
+
+.back{
+    background-color: blue;
+}
