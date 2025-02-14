@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Fetching Data from Input fields. -->
+
+    <div class="main">
+        <div class="stu_name">
+            <label for="">Student Name</label>
+            <input id="stu_name" type="text" placeholder="Student Name ">
+        </div>
+        <div class="stu_age">
+            <label for="">Student age</label>
+            <input id="stu_age" type="number" placeholder="Student Age ">
+        </div>
+
+        <button onclick="get_data()">Fetch Data</button>
+
+        <div>
+            <h3 id="set"></h3>
+        </div>
+    </div>
+
+
+    <script>
+        function get_data(){
+            let set=document.getElementById('set')
+            let stu_name=document.getElementById('stu_name').value;
+            let stu_age=document.getElementById('stu_age').value;
+            // document.write(`${stu_name} ${stu_age}`)
+            set.innerHTML=(`${stu_name} ${stu_age}`)
+        }
+    </script>
+</body>
+</html>

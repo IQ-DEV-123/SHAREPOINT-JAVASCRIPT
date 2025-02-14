@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #my_div{
+        background-color: red;
+        /* width: 100%;
+        height: 20px; */
+        transition: 1s all;
+    }
+</style>
+<body>
+    <!-- Date Time -->
+    <button onclick="click_me()">Click Me</button>
+    <h1 id="get_date"></h1>
+    <h2 id="count">0</h2>
+    <div id="my_div">
+
+    </div>
+
+    <script>
+        let get_date=document.getElementById('get_date')
+        let date=new Date() // Current data time
+        // let date=new Date(2070,1,15,12,20,30)  // Create custom datetime
+        // get_date.innerText=date.toLocaleDateString()
+        // get_date.innerText=date.toLocaleTimeString()
+        // get_date.innerText=date.toLocaleString()
+        // get_date.innerText=date.getFullYear()
+        // get_date.innerText=date.getDate()
+        // get_date.innerText=date.getDay()
+        // get_date.innerText=date.getHours()
+        // get_date.innerText=date.getMinutes()
+        // get_date.innerText=date.getSeconds()
+        let formate=date.toLocaleString("en-US",{
+            weekday:'long', 
+            year:'numeric',
+            month:'long',
+            hour:'2-digit',
+            minute:'2-digit',
+            second:'2-digit',
+            timeZoneName:'long'
+        })
+        get_date.innerText=formate
+        
+    </script>
+
+    <script>
+        let count=document.getElementById('count')
+        let my_div=document.getElementById('my_div')
+        let c=0;
+        function click_me(){
+            c+=10
+            if(c==10){
+                my_div.innerText="hello"
+            }
+            count.innerText=c;
+            my_div.style.width=`${c*2}%`
+            my_div.style.height=`${c}px`
+
+        }
+        
+    </script>
+</body>
+</html>
