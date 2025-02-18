@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- What is Event-Listner
+     Event Listner is a javascript in-builted method which waits any action by user from Browser(DOM).
+    -->
+
+    <!-- syntax: element_name.addeventlistener('event',callback,extra) -->
+
+    <!-- adding event-listener -->
+     <!-- <button id="e1">Click Me</button>
+     <div id="set"></div>
+    
+     <script>
+        let e1=document.getElementById('e1')
+        let set=document.getElementById('set')
+        function add(a,b){
+            set.innerHTML+=`Addition : ${a+b} <br>`
+        }
+        function sub(a,b){
+            set.innerHTML+=`Subtraction :${a-b} <br>`
+        }
+        e1.addEventListener('mouseover',()=>add(12,12))
+        e1.addEventListener('click',()=>sub(10,5),{once:true})
+     </script> -->
+
+
+     <!-- remove event-listener -->
+      <!-- <button id="pay_now">Pay Now</button>
+      <button id="reset_pay_now">Reset Pay Now </button>
+      <h2 id="set"></h2>
+      <script>
+        let btn=document.getElementById('pay_now')
+        let set=document.getElementById('set')
+        function handle_payment(){
+            set.innerHTML=("Payment Processing..")
+            btn.disabled=true
+            btn.style.cursor='not-allowed'
+            document.getElementById('pay_now').removeEventListener('click',handle_payment)
+            
+        }
+        function reset_handle_payment(){
+            set.innerHTML=("Payment Reset")
+            btn.disabled=false
+            btn.style.cursor='pointer'
+            document.getElementById('pay_now').addEventListener('click',handle_payment)
+        }
+        document.getElementById('pay_now').addEventListener('click',handle_payment)
+        document.getElementById('reset_pay_now').addEventListener('click',reset_handle_payment)
+      </script> -->
+
+
+      <!-- oninput event -->
+       <input oninput="type_me()" type="text" placeholder="Type Something" id="get">
+      <h3 id="set"></h3>
+
+       <script>
+        let set=document.getElementById('set')
+        function type_me(){
+        let data=document.getElementById('get').value
+        set.innerHTML=data
+        }
+       </script>
+</body>
+</html>

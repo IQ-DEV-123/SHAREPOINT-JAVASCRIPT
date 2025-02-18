@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div{
+        margin-top: 30px;
+    }
+    input[type='text']{
+        padding: 10px;
+        width: 80%;
+    }
+    input[type='password']{
+        padding: 10px;
+        width: 80%;
+    }
+    input[type='date']{
+        padding: 10px;
+        width: 80%;
+    }
+    select{
+        padding: 10px;
+        width: 80%;
+    }
+</style>
+
+<body>
+    <form action="" id="my-form">
+        <Fieldset style="width: 50%;">
+            <Legend>STUDENT REGISTRATION</Legend>
+            <div>
+                <label for="">Student Name</label>
+                <br>
+                <input type="text" placeholder="Enter Student name " id="st-name">
+            </div>
+
+            <div>
+                <label for="">Student Password</label>
+                <br>
+                <input type="password" placeholder="Enter Student Password " id="st-pass">
+            </div>
+            <div>
+                <label for="">Student DOB</label>
+                <br>
+                <input type="date" name="">
+            </div>
+            <div>
+                <label for="">Student Gender</label>
+                <br>
+                Male:<input type="radio" name="gender">
+                FeMale:<input type="radio" name="gender">
+            </div>
+
+            <div>
+                <label for="">Student Subject</label>
+                <br>
+                Math:<input type="checkbox">
+                Computer:<input type="checkbox">
+            </div>
+
+            <div>
+                <label for="">Student Class</label>
+                <br>
+                <select name="" id="">
+                    <option value="10th">10TH</option>
+                    <option value="12th">12TH</option>
+                    <option value="11th">11TH</option>
+                    <option value="9th">9TH</option>
+                </select>
+            </div>
+           <br>
+            <!-- <button onclick="fetch_data(event)" type="submit">SUBMIT</button> -->
+            <button type="submit">SUBMIT</button>
+        </Fieldset>
+
+
+
+    </form>
+
+
+    <!-- <script> 
+        function fetch_data(event){
+            event.preventDefault()
+            console.log(event.target)
+            let st_name=document.getElementById('st-name').value;
+            let st_pass=document.getElementById('st-pass').value;
+            console.log(st_name)
+            console.log(st_pass)
+            
+        }
+    </script> -->
+
+    <script>
+        document.getElementById('my-form').addEventListener('submit',function(event){
+            event.preventDefault()
+            let st_name=document.getElementById('st-name').value;
+            let st_pass=document.getElementById('st-pass').value;
+            console.log(st_name)
+            console.log(st_pass)
+            console.log(event)
+            document.getElementById('my-form').reset()
+        })
+    </script>
+
+</body>
+
+</html>

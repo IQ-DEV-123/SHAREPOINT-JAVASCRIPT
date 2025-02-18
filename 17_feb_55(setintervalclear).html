@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button  onclick="start()">Click Me <span id="set"></span></button>
+    <script>
+        let c=1
+        let set=document.getElementById('set')
+       
+        function counter(){
+            c+=1
+            set.innerHTML=c
+        }
+
+        function start(){
+            let count=setInterval(counter,1000)
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
