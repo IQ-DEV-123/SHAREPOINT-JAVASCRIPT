@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #set{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    #c-1{
+        border: 2px solid;
+        padding: 20px;
+    }
+</style>
 <body>
+    <div id="set"></div>
     <!-- 
     class: 
      1.class is group of data(properities/attributes) and features(method/functionality)
@@ -90,5 +102,40 @@
         m1.show()
        
     </script> -->
+
+    <script>
+        class Profile{
+            constructor(img,name){
+                this.img=img
+                this.name=name
+            }
+
+            details(){
+                let i=document.createElement('img')
+                i.src=`${this.img}`
+               
+                
+                let data=`${this.name}<br> <img src="${i.src}" width="100">`
+                return data
+            }
+        }
+
+        let set=document.getElementById('set')
+        let i='img-1.avif'
+        let user1=new Profile(i,'Aman')
+        let user2=new Profile('img-1.avif','abhay')
+        let user3=new Profile('img-1.avif','sohan')
+        let user4=new Profile('img-1.avif','rohan')
+        let ar=[user1,user2,user3,user4]
+        for (let i=0 ; i<ar.length ; i++){
+            set.innerHTML+=`<div id="c-1">${ar[i].details()}</div>`
+        }
+        
+       
+    </script>
+
+
+
+
 </body>
 </html>
