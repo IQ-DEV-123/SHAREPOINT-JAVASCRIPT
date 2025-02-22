@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container" >
+        <div class="row" id="profile">
+            
+        </div>
+    </div>
+
+    <script>
+        class Profile{
+            constructor(img,name,age,bio,deg,hobbies){
+                this.img=img;
+                this.name=name;
+                this.age=age;
+                this.bio=bio;
+                this.deg=deg;
+                this.hobbies=hobbies;
+            }
+
+            create_profile(){
+                return `
+                <div class="card col-1" style="width: 18rem;">
+                <img src="${this.img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <div class="card-title"><span class="h5">${this.name}</span>-<span class="h6">${this.age}</span> </div>
+                  <h6>${this.deg}</h6> 
+                  <p class="card-text text-center">${this.bio}</p>
+                  <hr>
+                  <div class="mb-2">
+                    ${this.hobbies.map((user)=> `<span class="rounded bg-primary p-2 text-white">${user}</span>` ).join(' ')}
+                  </div>
+                  <br>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+                `
+            }
+        }
+        let user=[
+        new Profile('img-1.avif','Aman1',23,'i am good developer','Software Developer',['Cooking','Coding','Sleeping']),
+        new Profile('img-1.avif','Aman2',23,'i am good developer','Software Developer',['Cooking','Coding','Sleeping']),
+        new Profile('img-1.avif','Aman3',23,'i am good developer','Software Developer',['Cooking','Coding','Sleeping'])
+
+        ]
+        document.getElementById('profile').innerHTML=user.map((user)=>user.create_profile()).join('')
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
