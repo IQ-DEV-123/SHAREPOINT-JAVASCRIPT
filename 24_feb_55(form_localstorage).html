@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body class="d-flex justify-content-center bg-light">
+
+    <div class="w-25 border p-5 mt-5 shadow-lg">
+        <form action="" id="my-form" >
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name ">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email address">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea style="resize: none;" class="form-control" id="message" rows="3" placeholder="Message"></textarea>
+        </div>
+
+        <button type="submit"  class="btn btn-success w-100">Send</button>
+    </form>
+    </div>
+
+    <div class="my-div">
+        <h2 id="h2"></h2>
+        <p id="p"></p>
+        <b id="b"></b>
+    </div>
+
+    <!-- <script>
+        document.getElementById('h2').innerHTML=localStorage.getItem('name')
+        document.getElementById('p').innerHTML=localStorage.getItem('user_email')
+        document.getElementById('b').innerHTML=localStorage.getItem('user_msg')
+        document.getElementById('my-form').addEventListener('submit',function (event){
+            event.preventDefault()
+            let user_name=document.getElementById('name').value;
+            let user_email=document.getElementById('email').value;
+            let user_msg=document.getElementById('message').value;
+            localStorage.setItem('name',user_name)
+            localStorage.setItem('user_email',user_email)
+            localStorage.setItem('user_msg',user_msg)
+            
+            document.getElementById('h2').innerHTML=localStorage.getItem('name')
+            document.getElementById('p').innerHTML=localStorage.getItem('user_email')
+            document.getElementById('b').innerHTML=localStorage.getItem('user_msg')
+    
+
+        })
+        
+    </script> -->
+
+    <!-- <script>
+        let h2=document.getElementById('h2')
+        h2.innerHTML=localStorage.getItem('name') || "Guest User"
+        
+        document.getElementById('name').addEventListener('input',function(){
+        let user_name=document.getElementById('name').value;
+        setTimeout(()=>{
+        localStorage.setItem('name',user_name)
+        h2.innerHTML=localStorage.getItem('name')
+
+        },1000)
+       })
+        
+    </script> -->
+
+    <!-- <script>
+        let user1=['dev@1234',"aman@1455","disha-8738743"]
+        localStorage.setItem('user1',JSON.stringify(user1))
+        console.log(JSON.parse(localStorage.getItem('user1')))
+    </script> -->
+
+    <script>
+        let ar=[
+        user1={ID:'EMP-'+String(Math.floor(Math.random()*1000)),name:"Dev1",mob:9898989,address:'NOIDA-123'},
+        user2={ID:'EMP-'+String(Math.floor(Math.random()*1000)),name:"Dev2",mob:9898989,address:'NOIDA-123'},
+        user3={ID:'EMP-'+String(Math.floor(Math.random()*1000)),name:"Dev3",mob:9898989,address:'NOIDA-123'},
+        ]
+        
+
+        for (user of ar){
+            localStorage.setItem(user.ID,JSON.stringify(user))
+        }
+        
+
+        let data=(JSON.parse(localStorage.getItem('user1')))
+        console.log(data.address)
+     
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
