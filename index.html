@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="text-gray-600 body-font bg-blue-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <H1 class="text-white ml-3 text-xl">BANKING APPLICATION</H1>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                <!-- <a class="mr-5 hover:text-gray-900">First Link</a>
+            <a class="mr-5 hover:text-gray-900">Second Link</a>
+            <a class="mr-5 hover:text-gray-900">Third Link</a>
+            <a class="mr-5 hover:text-gray-900">Fourth Link</a> -->
+            </nav>
+            <button
+                class="inline-flex items-center bg-gray-100 border-0 py-2 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Create
+                Account
+
+            </button>
+        </div>
+    </header>
+    <!-- header close -->
+
+    <div class="flex justify-between m-1 ">
+        <!-- form open -->
+        <div class=" w-1/3 border border-0 p-5 shadow-lg">
+        <h1 class="text-xl font-medium text-green-500">Registration Form</h1>
+        <form class=" mt-4">
+            <div class="mb-5">
+                <label for="Account-number" class="block mb-2 text-sm font-medium text-gray-900 ">Account number</label>
+                <input type="text" id="Account-number" placeholder="Account Number"
+                    class=" border text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="name@flowbite.com"
+                    required />
+            </div>
+            <div class="mb-5">
+                <label for="Customer-name" class="block mb-2 text-sm font-medium text-gray-900 ">Customer Name</label>
+                <input type="text" id="Customer-name" placeholder="Customer Name"
+                    class=" border text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="name@flowbite.com"
+                    required />
+            </div>
+            <div class="mb-5">
+                <label for="Mobile-Number" class="block mb-2 text-sm font-medium text-gray-900 ">Mobile Number</label>
+                <input type="number" id="Mobile-Number" placeholder="Mobile Number"
+                    class=" border text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="name@flowbite.com"
+                    required />
+            </div>
+            <div class="mb-5">
+                <label for="Customer-email" class="block mb-2 text-sm font-medium text-gray-900 ">Cutomer Email</label>
+                <input type="email" id="Customer-email" placeholder="Customer Email ID"
+                    class=" border text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="name@flowbite.com"
+                    required />
+            </div>
+            <div class="mb-5">
+                <label for="Customer Balance" class="block mb-2 text-sm font-medium text-gray-900 ">Customer Balance</label>
+                <input type="number" id="Customer Balance" placeholder="Customer Balance" value="0"
+                    class=" border text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="name@flowbite.com"
+                    required />
+            </div>
+
+            <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 p-2 w-full rounded cursor-pointer">Create Account</button>
+        </form>
+    </div>
+        <!-- form closed -->
+
+        <!-- table open -->
+
+        <div class="w-full ml-1">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Account number
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Account Holder
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Mobile
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Email-ID
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Balance
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Apple MacBook Pro 17"
+                        </th>
+                        <td class="px-6 py-4">
+                            Silver
+                        </td>
+                        <td class="px-6 py-4">
+                            Laptop
+                        </td>
+                        <td class="px-6 py-4">
+                            $2999
+                        </td>
+                        <td class="px-6 py-4">
+                            $2999
+                        </td>
+                        <td class=" py-4 text-center p-2">
+                            <button class="text-white bg-blue-700 py-1 w-full rounded">UPDATE</button>
+                            <br>
+                            <button class="text-white bg-red-700 w-full py-1 mt-1 rounded">DELETE</button>
+                            <br>
+                            <button class="text-white bg-green-700 w-full py-1 mt-1 rounded">DEPOSITE</button>
+                            <br>
+                            <button class="text-white bg-yellow-700 w-full py-1 mt-1 rounded">WITHDRAW</button>
+                        </td>
+
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+
+        <!-- table closed -->
+
+    </div>
+</body>
+
+</html>
