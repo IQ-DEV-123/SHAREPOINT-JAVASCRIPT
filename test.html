@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name="IQ" 
+        function test(){
+            console.log(this)
+        }
+        test()
+    
+    </script>
+    
+    <script>
+       let student_obj={
+        name:"Dev",
+        age:20,
+        show:function(){
+            console.log(this)
+        }
+       }
+    student_obj.show()
+    </script>
+    
+    // Create an object of student profile by taking data from user.
+
+<script>
+    function create_object(){
+        let my_ar=[]
+        for (let i=1 ; i<=5 ; i++){
+            let k=prompt("Key :")
+            let v=prompt("Value :")
+            my_ar.push([k,v])
+        }
+        let obj=Object.fromEntries(my_ar)
+        console.log(obj)
+    }
+    create_object()
+</script>    
+</body>
+</html>
