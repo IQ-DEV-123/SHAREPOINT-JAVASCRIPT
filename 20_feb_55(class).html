@@ -103,7 +103,7 @@
        
     </script> -->
 
-    <script>
+    <!-- <script>
         class Profile{
             constructor(img,name){
                 this.img=img
@@ -132,9 +132,55 @@
         }
         
        
-    </script>
+    </script> -->
 
 
+    <script>
+        class Manager{
+            constructor(name,age,salary){
+                this.name=name;
+                this.age=age;
+                this.salary=salary
+            }
+
+            show(){
+                return `Name : ${this.name} ${this.age} ${this.salary}`
+            }
+        }
+
+        class Employee extends Manager{
+            constructor({name,age,salary,profile,time}){
+                super(name,age,salary)
+                this.profile=profile
+                this.status="Working"
+                this.time=time
+            }
+
+            introduce(){
+                return `${super.show()} ${this.time}` 
+            }
+        }
+
+        let emp1=new Employee({name:'Dev',salary:'7000',profile:'Developer',age:24,time:new Date().toString()})
+        console.log(emp1.name)
+       console.log(emp1.introduce())
+
+    </script> 
+
+
+    <!-- <script>
+        // function data({name,age}){
+        //     console.log("name:"+name,"age:"+age)
+        // }
+        // data({age:34,name:"aman"})
+
+        function data({name,...rest}){
+            console.log("name:"+name,"age:"+rest)
+        }
+        data({age:34,name:"aman",salary:9000,gender:'Male'})
+
+
+    </script> -->
 
 
 </body>
