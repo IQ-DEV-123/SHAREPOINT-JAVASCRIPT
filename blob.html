@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    
+    <script>
+        let data=["this is data-1","this is data-2","this is data-3"]
+        let blob = new Blob([data],{type:'text/plain'})
+        let a= document.createElement("a")
+        a.href=URL.createObjectURL(blob)
+        a.download="task.txt"
+        a.innerHTML="Download Now"
+        document.body.appendChild(a)
+
+
+        console.log(blob)
+        console.log(a)
+        document.write(data)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-color: rgb(200, 199, 199);
+        text-align: center;
+    }
+
+    .container{
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    button{
+        background: blue;
+        color: white;
+        border: 0;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 1px 0px 1px 2px rgba(0, 0, 0, 0.183);
+    }
+    input{
+        padding: 9px;
+        outline: none;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+    button.remove_task{
+        background: yellow;
+        color: white;
+        border: 0;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 1px 0px 1px 2px rgba(0, 0, 0, 0.183);
+    }
+    li{
+        display: flex;
+        justify-content: space-between;
+        margin: 5px ;
+        align-items: center;
+        cursor: pointer;
+       
+    }
+    .completed{
+       text-decoration-line: line-through;
+       opacity: 0.5;
+       transition: 0.5s all;
+    }
+</style>
+<body>
+  <div class="container">
+    <h2>📝 My To Do List</h2>
+    <input id="taskinput" type="text" placeholder="Add a new Task..." autofocus>
+    <button id="add_task">ADD TASK</button>
+    <button id="fetchtask">FETCH TASK</button>
+    <ul id="task_list" >
+
+    </ul>
+    <button id="clear_completed">Clear Completed Task</button>
+  </div>
+
+
+
+
+  <script>
+    $(document).ready(function(){
+        let time = new Date;
+        $("#clear_completed").hide()
+        // add-task
+        $("#add_task").click(function(){
+            let taskinput=$('#taskinput').val().trim();
+            
+            if (taskinput !== ""){
+                
+                let content=$(`<li style="display:none" >${taskinput} ${time.toLocaleString()} <button class="remove_task">❌</button>  </li> <hr>`)
+                $("#task_list").append(content)
+                content.slideDown(100)
+                $('#taskinput').val("")
+                $("#clear_completed").show()
+
+            }
+
+        })
+
+        // add-task on enter press
+
+        $("#taskinput").keyup(function (event){
+            if (event.key === "Enter"){
+               $("#add_task").click()
+            }
+        })
+
+        // remove task
+        $("#task_list").on("click",".remove_task",function(){
+           let taskitem=$(this).parent()
+           let hr=taskitem.next("hr")
+
+            taskitem.fadeOut(200,function(){
+            taskitem.remove()
+            hr.remove()
+           
+            if ($("#task_list li").length === 0){
+                $("#clear_completed").hide()
+            }
+           })
+
+        })
+
+        // mark-as completed
+        $("#task_list").on("click","li",function(){
+          $(this).toggleClass("completed")
+        })
+
+        // clear completed task
+        $("#clear_completed").click(function(){
+            $(".completed").each(function(){
+                let taskitem=$(this) // get each completed task
+                let hr=taskitem.next("hr")
+                taskitem.slideUp(500,function(){
+                    taskitem.remove()
+                    hr.remove()
+                })
+            })
+        })
+
+
+        // Fetch Task
+        $("#fetchtask").click(function(){
+            $("#task_list").load("task.txt",function(response,status,xhr){
+                if (status === "success"){
+                   let tasks=response.split("\n")
+                   $("#task_list").empty()
+                   tasks.forEach(function(task){
+                    
+                    let content=$(`<li style="display:none" >${task} ${time.toLocaleString()} <button class="remove_task">❌</button>  </li> <hr>`)
+
+                    $("#task_list").append(content)
+                    $("#clear_completed").show()
+                    content.slideDown(500)
+                   })
+                }
+                else{
+                    console.log(xhr.status,xhr.statusText)
+                }
+            })
+        })
+    
+    })
+
+  </script>
+</body>
+
+</html>

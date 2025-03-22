@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    .main {
+        
+        width: 300px;
+        margin: 50px auto;
+        box-shadow: 1px 2px 3px 4px rgba(128, 128, 128, 0.55);
+        padding: 10px;
+    }
+    .main img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .main button{
+        width: 100%;
+        border: 0;
+        background-color: rgb(3, 85, 70);
+        padding: 10px;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+
+
+    <div class="main">
+
+        <div id="user-card">
+
+            <img src="" alt="Image Missing">
+            <h2>Name</h2>
+            <p>Email</p>
+            <p>Phone number</p>
+
+        </div>
+
+        <button id="fetch-profile">Fetch Profile</button>
+        <p id="load-content"></p>
+        
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+        $("#fetch-profile").click(function(){
+            let button=$(this)
+            let load_content=$("#load-content")
+            button.prop("disabled",true)
+            load_content.text("Fetching data Wait Please...")
+
+            $.ajax(
+                {
+                url:"https://randomuser.me/api",
+                method:"GET",
+                success: function(response){
+                let user_data=response.results[0]
+                let data=$(`
+                <div style="opacity:0">
+                 <img src="${user_data.picture.large}" alt="Image Missing">
+                  <h2>${user_data.name.first} ${user_data.name.last}</h2>
+                   <p>${user_data.email} </p>
+                    <p>${user_data.phone}</p>
+                <p>${user_data.location.country}</p>
+                </div>
+                `)
+                load_content.text("")
+
+                    $("#user-card").empty()
+                    $("#user-card").append(data)
+                    data.animate({opacity:1},1000)
+                    console.log(data)
+                },
+
+                error:function(response){
+                    console.log("Error in Fetching data",response.status)
+                },
+                
+               complete:function(){
+                setTimeout(()=>{button.prop("disabled",false)},1000)
+               }
+                
+             }
+            )
+
+
+        })
+        })
+      
+    </script>
+</body>
+
+</html>
