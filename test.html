@@ -4,27 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="result"></div>
-    <button id="fetchtask">Fetch Task</button>
-
     <script>
-        $(document).ready(function(){
-            $("#fetchtask").click(function(){
-                $("#result").load("task.txt",function(response,status,xhr){
-                    if (status==="success"){
-                        let data = response.split("\n")
-                        $("#result").empty()
-                        $("#result").append(data)
-                        document.write(data)
-
-                    }
-                })
-            })
-        })
-
+        let name="IQ" 
+        function test(){
+            console.log(this)
+        }
+        test()
+    
     </script>
+    
+    <script>
+       let student_obj={
+        name:"Dev",
+        age:20,
+        show:function(){
+            console.log(this)
+        }
+       }
+    student_obj.show()
+    </script>
+    
+    // Create an object of student profile by taking data from user.
+
+<script>
+    function create_object(){
+        let my_ar=[]
+        for (let i=1 ; i<=5 ; i++){
+            let k=prompt("Key :")
+            let v=prompt("Value :")
+            my_ar.push([k,v])
+        }
+        let obj=Object.fromEntries(my_ar)
+        console.log(obj)
+    }
+    create_object()
+</script>    
 </body>
 </html>

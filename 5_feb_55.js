@@ -21,10 +21,10 @@
 // let res=string.match(pattern)
 // console.log(res)
 
-// let string="Regular are A incredibly Aused in web-deveLopmenT for searching and validation";
-// let pattern=/a/ig
-// let res=string.search(pattern)
-// console.log(res)
+let string="Regular are A incredibly Aused in web-deveLopmenT for searching and validation";
+let pattern=/a/ig
+let res=string.search(pattern)
+console.log(res)
 
 // 1.Metacharecter
 
@@ -113,9 +113,9 @@
 // console.log('aman,abhay,rohan,ankit'.match(reg))
 
 // 3. Match any from 0-9.
-// let reg=/[A-Za-z0-9]/g
-// console.log(reg.test('this is kite bad'))
-// console.log('aman,abhay,rohan,ankit 236 @ #'.match(reg))
+let reg=/[A-Z]/g
+console.log(reg.test('this is kite bad'))
+console.log('aman,abhay,rohan,ankit 236 @ #'.match(reg))
 
 // 4. Match not any char.
 // let reg=/[,]/g

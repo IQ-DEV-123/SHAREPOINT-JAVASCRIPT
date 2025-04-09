@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        margin: auto;
+        margin-top: 50px;
+        width: 40%;
+    }
+    button{
+        display: block;
+        margin-top: 10px;
+        width: 40%;
+        padding: 10px;
+    }
+    input{
+        width: 36%;
+        padding: 10px;
+    }
+    input[type='checkbox']{
+        width: 10%;
+        padding: 5px;
+        margin-top: 10px;
+    }
+</style>
+<body>
+
+    <input type="text" id="input_text" placeholder="Type Something Here...">
+    <br>
+    <label for="">
+        Enable Live Analisys 
+        <input id="live" type="checkbox">
+    </label>
+
+    <button id="capsbtn"  onclick="show_result('caps',this)" >Totat Caps Letter</button>
+    <button  onclick="show_result('small',this)" >Totat Small Letter</button>
+    <button id="resetbtn">Reset</button>
+
+    
+    <script>
+        class String_analyzer{
+            constructor(text){
+                this.text=text
+                this.vowels="aeiouAEIOU"
+            }
+
+            get_total_caps(){
+                return [...this.text].filter(c=> c>="A" && c<="Z").length
+            }
+            get_total_small(){
+                return [...this.text].filter(c=> c>="a" && c<="z").length
+            }
+            get_total_vowel(){
+                return [...this.text].filter(c=> this.vowels.includes(c)).length
+            }
+            get_total_const(){
+                return [...this.text].filter(c=> !this.vowels.includes(c)).length
+            }
+            get_len(){
+                return this.text.length;
+            }
+            get_lower(){
+                return this.text.toLowerCase();
+            }
+            get_upper(){
+                return this.text.toUpperCase();
+            }
+        }
+
+
+        function show_result(type,button){
+        let input=document.getElementById('input_text').value;
+        let content = new String_analyzer(input)
+        let result=""
+
+        switch(type){
+            case "caps":
+            result=`Total Caps Letter :${content.get_total_caps()}`
+            break;
+            case "small":
+            result=`Total Small Letter :${content.get_total_small()}`
+            break;
+        }
+        button.innerHTML=result;
+    }
+
+    // live analyze
+    document.getElementById("input_text").addEventListener('input',()=>{
+        if (document.getElementById("live").checked){
+            show_result('caps',document.getElementById("capsbtn"))
+        }
+    })
+
+
+    window.onload=()=>document.getElementById("resetbtn").onclick=()=>location.reload();       
+
+
+    </script>
+</body>
+</html>

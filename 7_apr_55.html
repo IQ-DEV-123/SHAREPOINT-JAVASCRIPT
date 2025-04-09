@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    img{
+        width: 400px;
+        height: 400px;
+        display: none;
+    }
+    label{
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 4px;
+    }
+</style>
+<body>
+    <!-- FileReader is a built-in javascript used to read file asynchronously in the browser -->
+
+    <!-- readAsText(file) (.txt.,json,docs,csv) -->
+    <!-- readAsDataURL(file) imagefile,video files (base64) -->
+    <!-- readbinaryprocess() -->
+ 
+
+
+    <h2>Image Previewer</h2>
+    <input type="file" hidden id="image_input" multiple accept="image/*">
+    <label for="image_input">Upload Profile</label>
+    <a href="">
+
+        <img src="" alt="not found" id="preview">
+    </a>
+    
+
+    <script>
+        document.getElementById("image_input").addEventListener("input",function(event){
+            let file=event.target.files[0]
+            console.log(file)
+
+            if(file && file.type.startsWith("image/")){
+                let reader= new FileReader()
+                
+                reader.onload=function(e){
+                    let preview = document.getElementById("preview")
+                    preview.src = e.target.result
+                    preview.style.display="block"
+                    
+                }
+                reader.readAsDataURL(file)
+                document.getElementById("image_input").style.display="none"
+            }
+        })
+    </script>
+</body>
+</html>
